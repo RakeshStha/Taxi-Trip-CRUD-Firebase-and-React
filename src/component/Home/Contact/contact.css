@@ -1,0 +1,149 @@
+.top-contact-div {
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+  }
+
+  .top-contact-div h1 {
+    text-align: center;
+    font-size: 3.4rem;
+  }
+
+  .top-contact-div img {
+    width: 89vw;
+  }
+
+  /* Bottom contact part */
+  .bottom-contact-img-text {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+  }
+
+  .bottom-contact-div {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-gap: 2rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .bottom-contact-img img {
+    width: 45vw;
+  }
+
+  .bottom-contact-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .bottom-contact-text p {
+    line-height: 0.35rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .bottom-contact-form {
+    padding: 3rem;
+  }
+
+  .form-part {
+    text-align: start;
+  }
+
+  .bottom-contact-form {
+    background-color: orange;
+    border-radius: 2rem;
+  }
+
+  .fullname,
+  .email {
+    width: 87.6%;
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.5rem;
+    padding-left: 3rem;
+  }
+
+  .message {
+    width: 87.6%;
+    height: 8rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.5rem;
+    padding-left: 3rem;
+  }
+
+  .submit-div {
+    display: grid;
+    place-content: center;
+  }
+
+  .submit {
+    width: 10rem;
+    height: 3rem;
+    margin-top: 3rem;
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+    background-color: #71E375;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .fullname:focus {
+    outline: none;
+  }
+
+  .email:focus {
+    outline: none;
+  }
+
+  .message:focus {
+    outline: none;
+  }
+
+  .submit:focus {
+    outline: none;
+  }
+
+  @media (max-width: 600px) {
+    .top-contact-div h1 {
+      font-size: 2.5rem;
+    }
+    .bottom-contact-div {
+      grid-template-columns: 1fr;
+    }
+    .bottom-contact-text h1 {
+      font-size: 1.6rem;
+    }
+    .bottom-contact-text p {
+      line-height: 1rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    .bottom-contact-img-text {
+      grid-template-columns: 1fr 1.2fr;
+    }
+    .bottom-contact-form {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    .fullname,
+    .email {
+      width: 87.6%;
+      height: 2.4rem;
+    }
+    .message {
+      width: 87.6%;
+      height: 5rem;
+    }
+    .submit {
+      width: 7rem;
+      height: 2.6rem;
+      margin-top: 1rem;
+    }
+  }
