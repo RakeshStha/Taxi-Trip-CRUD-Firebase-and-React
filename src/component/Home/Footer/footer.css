@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
 }
-/* .footer > .footer-container >  */
+
 .footer-container {
   color: white;
   text-align: center;
@@ -18,15 +18,18 @@
   margin-bottom: 2rem;
   text-align: justify;
 }
+
 .bottom-footer-container {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
 }
+
 .Copyright {
   display: flex;
   justify-content: flex-start;
   margin-left: 4rem;
 }
+
 .Privacy-policy {
   display: flex;
   justify-content: flex-end;
