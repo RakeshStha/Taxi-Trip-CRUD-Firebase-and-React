@@ -1,4 +1,8 @@
 
+:root {
+    --about-head: #FF0101;
+    --service-head: #FAFF1B;
+}
 
 .flex {
     display: flex;

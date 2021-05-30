@@ -7,7 +7,7 @@ import Contact from './component/Home/Contact/Contact';
 import Service from './component/Home/Service/Service';
 import Booking from './component/Home/Booking/Booking';
 import NotFound from './component/Error/NotFound';
-import Navbar from './component/Home/Navbar/Navbar';
+import Navbar from './component/Home/Navbar/Navbar'
 import Footer from './component/Home/Footer/Footer'
 
 function App() {

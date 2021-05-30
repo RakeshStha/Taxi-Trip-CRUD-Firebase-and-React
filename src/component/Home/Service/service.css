@@ -1,0 +1,13 @@
+.service-contianer {
+    margin: 0px;
+    padding: 0px;
+}
+
+.service-content {
+    margin: 0px;
+    padding: 0px;
+    height: 30rem;
+    background-image: url('../../../Img/service.png');
+
+}
+

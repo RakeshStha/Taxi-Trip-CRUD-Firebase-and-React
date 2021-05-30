@@ -1,7 +1,12 @@
+.footer {
+  background-image: url("../../../Img/footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 /* .footer > .footer-container >  */
 .footer-container {
   color: white;
-  background-color: #545454;
   text-align: center;
 }
 .top-footer-container {
