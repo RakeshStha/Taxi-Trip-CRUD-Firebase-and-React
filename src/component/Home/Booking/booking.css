@@ -1,0 +1,119 @@
+.booking-container {
+    margin: 0px;
+    padding: 0px;
+}
+
+.booking-container h1 {
+    margin: 0px;
+    padding-top: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.booking-images{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+
+.booking-images img {
+    height: 45vw;
+    width: 45vw;
+}
+
+.booknow {
+    background: linear-gradient(180deg, rgba(255, 255, 0, 0.38) 0%, rgba(250, 255, 27, 0) 100%), #FFFFFF;
+}
+
+.booknow h1 {
+    margin: 0;
+    padding-top: 50px;
+    text-align: center;
+    color: var(--booknow-head);
+}
+
+/* Form */
+.booking-form {
+    background-color: var(--booking-form);
+    border-radius: 50px;
+    padding: 80px;
+    margin: 50px 60px 50px 60px;
+}
+
+.btn-booknow {
+    background-color: #FF7A00;
+    border: none;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.form-book {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.form-book p {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.form-book input {
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.form-book input::placeholder {
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .booking-images{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; 
+    }
+    .booking-images img {
+        height: 100vw;
+        width: 100vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .form-book {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .booking-form {
+        background-color: var(--booking-form);
+        border-radius: 50px;
+        padding: 30px;
+        margin: 50px 60px 50px 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .booking-images{
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; 
+    }
+    .booking-images img {
+        height: 100vw;
+        width: 100vw;
+    }
+    .taxi-img img{
+        width: 95vw;
+        height: 95vw;
+    }
+}

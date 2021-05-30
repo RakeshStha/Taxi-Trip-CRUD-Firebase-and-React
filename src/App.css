@@ -2,6 +2,16 @@
 :root {
     --about-head: #FF0101;
     --service-head: #FAFF1B;
+    --booknow-head: #FF7A00;
+    --booking-form: #F8EB79;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.pt-10 {
+    padding: 20px;
 }
 
 .flex {
