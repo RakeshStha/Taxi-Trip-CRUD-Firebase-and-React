@@ -1,13 +1,14 @@
 
 import './App.css';
-import Footer from './component/Footer/Footer'
+
 import { Route, Switch} from 'react-router-dom';
-import About from './component/About/About';
-import Contact from './component/Contact/Contact';
-import Service from './component/Service/Service';
-import Booking from './component/Booking/Booking';
+import About from './component/Home/About/About';
+import Contact from './component/Home/Contact/Contact';
+import Service from './component/Home/Service/Service';
+import Booking from './component/Home/Booking/Booking';
 import NotFound from './component/Error/NotFound';
-import Navbar from './component/Navbar/Navbar';
+import Navbar from './component/Home/Navbar/Navbar';
+import Footer from './component/Home/Footer/Footer'
 
 function App() {
   return (
