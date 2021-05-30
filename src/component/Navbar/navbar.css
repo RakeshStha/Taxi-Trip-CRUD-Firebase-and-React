@@ -1,0 +1,11 @@
+.navbar {
+    
+}
+.nav {
+    font-weight: 700;
+    color: black;
+}
+
+.active {
+    color: white;
+}
