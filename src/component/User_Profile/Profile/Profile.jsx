@@ -8,13 +8,14 @@ const Profile = () => {
                 <div>
                     <h1>Personal Information</h1>
                 </div>
-                <div>
-                    
-                </div>
             </div>
             <hr className="line"></hr>
             <div className="user_container">
-                Hello
+                <p className="label">Fullname : <input></input></p>
+                <p className="label">Email Address : <input></input></p>
+                <p className="label">Phone : <input></input></p>
+                <p className="label">Password : <input></input></p>
+                <button className="btn-edit">Edit</button>
             </div>
         </div>
     )

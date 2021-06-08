@@ -38,6 +38,9 @@ const Navbar = () => {
                         <div>
                             <NavLink className="nav" exact activeClassName="active" to ="/booking">Online Booking</NavLink>
                         </div>
+                        <div>
+                            <NavLink className="nav" exact activeClassName="active" to ="/login">Login</NavLink>
+                        </div>
                     </div>
                 </div>
             </div>

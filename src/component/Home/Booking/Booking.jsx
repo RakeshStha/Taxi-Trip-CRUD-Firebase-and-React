@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../Booking/booking.css'
 import firebase from '../firebase'
+// require('firebase/auth')
 
 const Booking = () => {
     const initialFieldValues= {
@@ -22,11 +23,12 @@ const Booking = () => {
       const sendOTP=(e)=>{
         e.preventDefault();
 
-        // firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then((u)=>{
-        //     console.log(u)
-        // }).catch((err)=>{
-        //     console.log(err);
-        // })
+        firebase.auth().createUserWithPhoneAndPassword(values.phone, values.password).then((u)=>{
+            console.log(u)
+        }).catch((err)=>{
+            console.log(err);
+            console.log('Error')
+        })
 
         // const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
         //     firebase.database().ref('signup').push( 
@@ -35,39 +37,40 @@ const Booking = () => {
         //         console.log(error)
         //     })
         
-        let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
-        // let number = '+9779849497787'
-        // console.log(typeof(number));
-        let number ='+977' + String(values.phone);
-        console.log(number);
-        firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
-        let code = prompt('enter the otp', '');
-        // this.setState({
-        //   popupComponent:true,
-        // })
-        if(code == null) return;
+        // let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
+        // // let number = '+9779849497787'
+        // // console.log(typeof(number));
+        // let number ='+977' + String(values.phone);
+        // console.log(number);
+        // firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
+        // let code = prompt('enter the otp', '');
+        // // this.setState({
+        // //   popupComponent:true,
+        // // })
+        // if(code == null) return;
 
-        e.confirm(code).then(function(result){
-            console.log(result.user, 'user');
-            // document.querySelector('label').textContent = result.user.phoneNumber + "Number verified";
+        // e.confirm(code).then(function(result){
+        //     console.log(result.user, 'user');
+        //     // document.querySelector('label').textContent = result.user.phoneNumber + "Number verified";
             
-            const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
-            firebase.database().ref('signup').push( 
-            values
-            ).catch((error)=>{
-                console.log(error)
-            })
-            firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then((u)=>{
-                console.log(u)
-            }).catch((err)=>{
-                console.log(err);
-            })
+        //     const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
+        //     firebase.database().ref('signup').push( 
+        //     values
+        //     ).catch((error)=>{
+        //         console.log(error)
+        //     })
+        //     firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then((u)=>{
+        //         console.log(u)
+        //     }).catch((err)=>{
+        //         console.log(err);
+        //     })
 
-            }).catch((error)=>{
-            console.log(error)
-            // console.log('code does not match');
-        })
-        })
+
+        //     }).catch((error)=>{
+        //     console.log(error)
+        //     // console.log('code does not match');
+        // })
+        // })
       }
     
 

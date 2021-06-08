@@ -33,10 +33,7 @@ const Navbar = () => {
                             <NavLink className="nav" exact activeClassName="active" to ="/user_booking">Booking</NavLink>
                         </div>
                         <div>
-                            <NavLink className="nav" exact activeClassName="active" to ="/statement">Statement</NavLink>
-                        </div>
-                        <div>
-                            <NavLink className="nav" exact activeClassName="active" to ="/map">Map</NavLink>
+                            <NavLink className="nav" exact activeClassName="active" to ="/user_map">Map</NavLink>
                         </div>
                         <div>
                             <button className="btn-logout">Logout</button>
