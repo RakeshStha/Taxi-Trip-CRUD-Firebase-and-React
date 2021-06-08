@@ -9,6 +9,7 @@ import Booking from './component/Home/Booking/Booking';
 import NotFound from './component/Error/NotFound';
 import Navbar from './component/Home/Navbar/Navbar'
 import Footer from './component/Home/Footer/Footer'
+import Profile from './component/User_Profile/Profile/Profile'
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             <Route exact path = "/service" component= {Service}/>
             <Route exact path = "/contact" component= {Contact}/>
             <Route exact path = "/booking" component= {Booking}/>
+            <Route exact path = "/user_profile" component= {Profile}/>
+            {/* <Route exact path = "/booking" component= {Booking}/>
+            <Route exact path = "/booking" component= {Booking}/> */}
             <Route component={NotFound}/>
           </Switch>
         <Footer/>

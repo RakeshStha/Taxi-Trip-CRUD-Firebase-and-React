@@ -147,3 +147,39 @@
       margin-top: 1rem;
     }
   }
+
+  .messages-unfinished {
+    border: 2px solid #d9534f;
+    background-color: #d9534f;
+    border-radius: 13px;
+    display: none;
+    
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    /* color: red; */
+  }
+
+  .messages-finished {
+    border: 2px solid #5cb85c;
+    background-color: #5cb85c;
+    border-radius: 13px;
+    display: none;
+    
+    height: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    /* color: #5cb85c; */
+  }
+
+  .message-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message-unsuccess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
