@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../Home/Navbar/navbar.css'
 import {NavLink} from 'react-router-dom';
-
+import '../User_Navbar/user_navbar.css'
 
 
 
 const Navbar = () => {
 
     function showClick(){
-        document.getElementById("navbar-link").classList.toggle("show");
+        document.getElementById("user_loggedin").classList.toggle("show");
     }
 
     return (
@@ -25,7 +25,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="flex-1">
-                    <div className="flex-row navbar-link" id="navbar-link">
+                    <div className="flex-row navbar-link" id="user_loggedin">
                         <div>
                             <NavLink className="nav" exact activeClassName="active" to ="/user_profile">Profile</NavLink>
                         </div>
@@ -37,6 +37,9 @@ const Navbar = () => {
                         </div>
                         <div>
                             <NavLink className="nav" exact activeClassName="active" to ="/map">Map</NavLink>
+                        </div>
+                        <div>
+                            <button className="btn-logout">Logout</button>
                         </div>
                     </div>
                 </div>

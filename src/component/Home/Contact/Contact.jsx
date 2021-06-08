@@ -19,24 +19,22 @@ const Contact = () => {
   }
 
   const handleFormSubmit=(e)=>{
+
+    // const succeed = document.querySelector('.messages-finished');
+    // succeed.classList.toggle("message-success");
+
     e.preventDefault();
     const messageRef = firebase.database().ref('contact').orderByKey().limitToLast(100);
         firebase.database().ref('contact').push( 
-          values 
-          
+          values
           ).catch((error)=>{
-            if (error){
-              console.log(error)
-              var unsucceed = document.getElementById('messages-unfinished');
+              var unsucceed = document.querySelector('messages-unfinished');
               unsucceed.classList.toggle("message-unsuccess")
-
-            }
-            
-            else
-            var succeed = document.getElementById('messages-finished');
-            succeed.classList.toggle("message-success");
-           
           })
+
+      var succeed = document.querySelector('.messages-finished');
+      succeed.classList.toggle("message-success");
+          
   }
 
 

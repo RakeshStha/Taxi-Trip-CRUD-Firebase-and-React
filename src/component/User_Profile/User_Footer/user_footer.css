@@ -1,0 +1,38 @@
+.user-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-footer h3{
+    padding: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.user_footer_foot{
+    color: rgb(146, 140, 140);
+}
+
+.foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+    .user-footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: none;
+        align-items: center;
+    }
+    .flex-one {
+        flex: 1;
+    }
+    
+  }

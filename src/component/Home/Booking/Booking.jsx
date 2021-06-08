@@ -6,7 +6,8 @@ const Booking = () => {
     const initialFieldValues= {
         name: '',
         email: '',
-        phone:''
+        phone:'',
+        password:''
       }
       var [values, setValues] = useState(initialFieldValues);
     
@@ -20,6 +21,19 @@ const Booking = () => {
 
       const sendOTP=(e)=>{
         e.preventDefault();
+
+        // firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then((u)=>{
+        //     console.log(u)
+        // }).catch((err)=>{
+        //     console.log(err);
+        // })
+
+        // const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
+        //     firebase.database().ref('signup').push( 
+        //     values
+        //     ).catch((error)=>{
+        //         console.log(error)
+        //     })
         
         let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
         // let number = '+9779849497787'
@@ -27,8 +41,6 @@ const Booking = () => {
         let number ='+977' + String(values.phone);
         console.log(number);
         firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
-        React.createElement("Modal")
-        
         let code = prompt('enter the otp', '');
         // this.setState({
         //   popupComponent:true,
@@ -44,6 +56,11 @@ const Booking = () => {
             values
             ).catch((error)=>{
                 console.log(error)
+            })
+            firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then((u)=>{
+                console.log(u)
+            }).catch((err)=>{
+                console.log(err);
             })
 
             }).catch((error)=>{
@@ -83,7 +100,7 @@ const Booking = () => {
                         </div>
                         <div >
                             <p>Email Address</p>
-                            <input type="text" 
+                            <input type="email" 
                             name="email" 
                             id="email" 
                             placeholder="abc@gmail.com" 
@@ -99,6 +116,17 @@ const Booking = () => {
                             id="phone"
                             value={values.phone} 
                             placeholder="+977-9812345678" 
+                            onChange={handleInputChange}
+                            />
+                        </div>
+                        <div >
+                            <p>Password</p>
+                            <input type="password"
+                            
+                            name="password" 
+                            id="password"
+                            value={values.password} 
+                            placeholder="******" 
                             onChange={handleInputChange}
                             />
                         </div>

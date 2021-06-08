@@ -1,0 +1,14 @@
+.btn-logout {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    align-items: center;
+    height: 3rem;
+    width: 7rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: #EE7F7F ;
+}
+.main-navbar, .main-navbar-footer {
+    display: none;
+}

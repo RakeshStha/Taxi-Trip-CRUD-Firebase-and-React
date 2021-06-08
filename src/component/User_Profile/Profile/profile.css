@@ -1,0 +1,16 @@
+.user_profile {
+    padding: 10px 100px 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.line {
+    margin: 5px 100px 35px 100px;
+}
+
+.user_container {
+    margin: 5px 100px 5px 100px;
+}
