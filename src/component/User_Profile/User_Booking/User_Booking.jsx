@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
-import ContactForm from "./BookingForm"
+import User_Booking_Form from '../User_Booking/User_booking_Form'
 import firebaseDb from '../../Home/firebase'
+import '../User_Booking/user-booking.css'
 
 const User_Booking = () => {
 
@@ -61,39 +62,46 @@ const User_Booking = () => {
 
     return (
         <>
-            <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-4 text-center">Contact Register</h1>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5">
-                    <ContactForm {...({addOrEdit,  currentId, contactObjects})}/>
-                </div>
-                <div className="col-md-7">
-                    <table className="table table-borderless table-stripped">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>Full Name</th>
-                                <th>Mobile</th>
-                                <th>Email</th>
-                                {/* <th>Address</th> */}
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
+            <div className="head-user-booking">
+            <h1>Booking</h1>
+        </div>
+       
+        <div class="user_booking">
+            <div className="user_booking_content">
+                <div className="flex-1">
+                    <User_Booking_Form {...({addOrEdit,  currentId, contactObjects})}/>
+                    </div>
+                <div className="flex-1">
+                    <table className="records">
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Country</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Type</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
                         <tbody>
-                            {
+                        {
                                Object.keys(contactObjects).map(id=>{
                                    return <tr key={id}>
                                        <td>{contactObjects[id].fullName}</td>
-                                       <td>{contactObjects[id].mobile}</td>
                                        <td>{contactObjects[id].email}</td>
+                                       <td>{contactObjects[id].number}</td>
+                                       <td>{contactObjects[id].country}</td>
+                                       <td>{contactObjects[id].from}</td>
+                                       <td>{contactObjects[id].to}</td>
+                                       <td>{contactObjects[id].type}</td>
+                                       <td>{contactObjects[id].price}</td>
                                        {/* <td>{contactObjects[id].address}</td> */}
                                        <td>
-                                            <a className="btn text-primary" onClick={()=> {setCurrentId(id)}}>
+                                            <a className="btn-action-pencil " onClick={()=> {setCurrentId(id)}}>
                                                 <i className=" fas fa-pencil-alt"></i>
                                             </a>
-                                            <a className="btn text-danger" onClick={()=> {onDelete(id)}}>
+                                            <a className="btn-action-trash" onClick={()=> {onDelete(id)}}>
                                                 <i className=" fas fa-trash-alt"></i>
                                             </a>
                                        </td>
@@ -104,6 +112,8 @@ const User_Booking = () => {
                     </table>
                 </div>
             </div>
+        </div>
+    
         </>
     );
 }

@@ -1,0 +1,99 @@
+
+.head-user-booking{
+    margin: 0px;
+    height: 180px;
+    background-color: rgb(204, 200, 200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.user_booking {
+  padding-top: 30px;
+  padding-bottom: 30px; 
+}
+
+.user_booking_content {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-input {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.user_label{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.user-input input {
+    margin: 10px;
+    height: 23px;
+}
+
+
+/*table*/
+
+.records {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+.records td, .records th {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+.records tr:nth-child(even){background-color: #f2f2f2;}
+  
+.records tr:hover {background-color: #ddd;}
+  
+.records th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #30b357;
+    color: white;
+  }
+
+
+.btn-user{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-users {
+    background: none;
+    background-color: #2475f8;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 50%;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.btn-action-pencil {
+    padding: 10px;
+    color: #007bff;
+}
+
+.btn-action-trash{
+    color: #dc3545;
+    padding: 10px;
+}

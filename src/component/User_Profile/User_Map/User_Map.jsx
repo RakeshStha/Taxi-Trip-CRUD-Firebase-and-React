@@ -3,8 +3,10 @@ import '../User_Map/user_map.css'
 
 const User_Map = () => {
     return (
-        <div>
-            User Map
+        <div className="map_container">
+            <div className="map_content">
+                map
+            </div>
         </div>
     )
 }
