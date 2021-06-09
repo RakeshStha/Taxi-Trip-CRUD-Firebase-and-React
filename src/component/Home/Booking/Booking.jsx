@@ -22,13 +22,16 @@ const Booking = () => {
 
       const sendOTP=(e)=>{
         e.preventDefault();
+        // var Phone = values.phone + '@gmail.com'
 
-        firebase.auth().createUserWithPhoneAndPassword(values.phone, values.password).then((u)=>{
-            console.log(u)
-        }).catch((err)=>{
-            console.log(err);
-            console.log('Error')
-        })
+        // firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
+        //     // console.log(u)
+        //     var succeed = document.querySelector('.messages-finished');
+        //     succeed.classList.toggle("message-success");
+        // }).catch((err)=>{
+        //     console.log(err);
+        //     console.log('Error')
+        // })
 
         // const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
         //     firebase.database().ref('signup').push( 
@@ -36,41 +39,55 @@ const Booking = () => {
         //     ).catch((error)=>{
         //         console.log(error)
         //     })
+
+
         
-        // let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
-        // // let number = '+9779849497787'
-        // // console.log(typeof(number));
-        // let number ='+977' + String(values.phone);
+        let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
+        // let number = '+9779849497787'
+        // console.log(typeof(number));
+        let number ='+977' + String(values.phone);
         // console.log(number);
-        // firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
-        // let code = prompt('enter the otp', '');
-        // // this.setState({
-        // //   popupComponent:true,
-        // // })
-        // if(code == null) return;
+        firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
+        let code = prompt('enter the otp', '');
+        // this.setState({
+        //   popupComponent:true,
+        // })
+        if(code == null) return;
 
-        // e.confirm(code).then(function(result){
-        //     console.log(result.user, 'user');
-        //     // document.querySelector('label').textContent = result.user.phoneNumber + "Number verified";
+        e.confirm(code).then(function(result){
+            console.log(result.user, 'user');
+            // document.querySelector('label').textContent = result.user.phoneNumber + "Number verified";
             
-        //     const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
-        //     firebase.database().ref('signup').push( 
-        //     values
-        //     ).catch((error)=>{
-        //         console.log(error)
-        //     })
-        //     firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then((u)=>{
-        //         console.log(u)
-        //     }).catch((err)=>{
-        //         console.log(err);
-        //     })
+            const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
+            firebase.database().ref('signup').push( 
+            values
+            ).catch((error)=>{
+                console.log(error)
+                var unsucceed = document.querySelector('messages-unfinished');
+              unsucceed.classList.toggle("message-unsuccess")
+            })
+            var Phone = values.phone + '@gmail.com'
+
+        firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
+            // console.log(u)
+            var succeed = document.querySelector('.messages-finished');
+            succeed.classList.toggle("message-success");
+        }).catch((err)=>{
+            console.log(err);
+            var unsucceed = document.querySelector('messages-unfinished');
+              unsucceed.classList.toggle("message-unsuccess")
+        })
 
 
-        //     }).catch((error)=>{
-        //     console.log(error)
-        //     // console.log('code does not match');
-        // })
-        // })
+            }).catch((error)=>{
+            
+            // var unsucceed = document.querySelector('messages-unfinished');
+            //   unsucceed.classList.toggle("message-unsuccess")
+              console.log(error)
+              alert('Code doesnot match. Please try again. Thank You!')
+            // console.log('code does not match');
+        })
+        })
       }
     
 
@@ -90,6 +107,8 @@ const Booking = () => {
                 <img src="assets/images/booking-taxi.png" alt="taxi-Booking" />
             </div>
             <div className="booking-form">
+            <p className="messages-unfinished" id="messages-unfinished">Sorry we got some error please try again.</p>
+          <p className="messages-finished" id="messages-finished">Account creation successfully. Thank You!</p>
                 <form action="" method="post">
                     <div className=" form-book">
                         <div >

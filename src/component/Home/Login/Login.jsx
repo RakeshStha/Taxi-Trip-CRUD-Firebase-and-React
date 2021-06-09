@@ -26,7 +26,9 @@ const Login = () => {
         // succeed.classList.toggle("message-success");
     
         e.preventDefault();
-        firebase.auth().signInWithPhoneNumber(values.phone, values.password).then((u)=>{
+        var Email = values.username + '@gmail.com'
+        console.log(Email)
+        firebase.auth().signInWithEmailAndPassword(Email, values.password).then((u)=>{
             console.log(u)
         }).catch((err)=>{
             console.log(err)

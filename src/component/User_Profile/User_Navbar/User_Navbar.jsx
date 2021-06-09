@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Home/Navbar/navbar.css'
 import {NavLink} from 'react-router-dom';
 import '../User_Navbar/user_navbar.css'
-
+import firebase from '../../Home/firebase'
 
 
 const Navbar = () => {
@@ -36,7 +36,12 @@ const Navbar = () => {
                             <NavLink className="nav" exact activeClassName="active" to ="/user_map">Map</NavLink>
                         </div>
                         <div>
-                            <button className="btn-logout">Logout</button>
+                            <button className="btn-logout" onClick={()=> 
+                                firebase.auth().signOut().catch((err)=>{
+                                    console.log(err)
+                                })
+                                
+                                }>Logout</button>
                         </div>
                     </div>
                 </div>
