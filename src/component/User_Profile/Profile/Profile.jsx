@@ -1,9 +1,11 @@
 import React from 'react'
 import '../Profile/profile.css'
 
+
 const Profile = () => {
     return (
         <div>
+        
             <div className="user_profile">
                 <div>
                     <h1>Personal Information</h1>
@@ -17,6 +19,7 @@ const Profile = () => {
                 <p className="label">Password : <input></input></p>
                 <button className="btn-edit">Edit</button>
             </div>
+            
         </div>
     )
 }

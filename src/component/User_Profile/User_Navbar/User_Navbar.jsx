@@ -27,7 +27,7 @@ const Navbar = () => {
                 <div className="flex-1">
                     <div className="flex-row navbar-link" id="user_loggedin">
                         <div>
-                            <NavLink className="nav" exact activeClassName="active" to ="/user_profile">Profile</NavLink>
+                            <NavLink className="nav" exact activeClassName="active" to ="/">Profile</NavLink>
                         </div>
                         <div>
                             <NavLink className="nav" exact activeClassName="active" to ="/user_booking">Booking</NavLink>
@@ -37,10 +37,15 @@ const Navbar = () => {
                         </div>
                         <div>
                             <button className="btn-logout" onClick={()=> 
+                            {
                                 firebase.auth().signOut().catch((err)=>{
                                     console.log(err)
-                                })
-                                
+                                    alert('Signout Error')
+                                }
+                                )
+                                alert('Signout successfull');
+                                window.location.href = '/';
+                                }
                                 }>Logout</button>
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {Map, Marker, GoogleApiWrapper, InfoWindow} from 'google-maps-react';
 import '../User_Map/user_map.css'
+
  
 
 class User_Map extends Component {
@@ -38,13 +39,14 @@ class User_Map extends Component {
   render() {
     return (
      <>
+   
      <div>
-        
+       
          <button onClick={this.getLocation()}>Find me</button>
      </div>
      latitude: {this.state.latitude}<br></br>
         longitude: {this.state.longitude}
-      {/* <Map 
+      <Map 
       className="map-a"
       google={this.props.google}
       center={{
@@ -58,7 +60,7 @@ class User_Map extends Component {
       <Marker 
       name={'Current Location'}
       position={{lat: 27.59714, lng: 85.31942}} />  
-    </Map> */}
+    </Map>
 
     {/* <Map 
       className="map-b"
@@ -75,6 +77,7 @@ class User_Map extends Component {
       position={{lat: this.state.latitude, lng: this.state.longitude}} />  
 
     </Map> */}
+  
     </>
     );
   }

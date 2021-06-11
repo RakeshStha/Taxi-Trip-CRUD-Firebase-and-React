@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../Login/login.css'
 import {Link} from "react-router-dom";
 import firebase from "../firebase"
+import Profile from "../../User_Profile/Profile/Profile"
 
 
 const Login = () => {
@@ -29,9 +30,12 @@ const Login = () => {
         var Email = values.username + '@gmail.com'
         console.log(Email)
         firebase.auth().signInWithEmailAndPassword(Email, values.password).then((u)=>{
+            alert('Login Sccessfully!')
             console.log(u)
+            window.location.href = '/';
         }).catch((err)=>{
             console.log(err)
+            alert('Invalid username or password!')
         })
 
       }
