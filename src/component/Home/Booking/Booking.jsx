@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import '../Booking/booking.css'
 import firebase from '../firebase'
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
+import Pulse from 'react-reveal/Pulse';
 // require('firebase/auth')
 
 const Booking = () => {
@@ -95,22 +98,26 @@ const Booking = () => {
 
     return (
         <div className="booking-container">
-            <h1>Choose your destination and grap your taxi.</h1>
+            <Zoom><h1>Choose your destination and grap your taxi.</h1></Zoom>
             <div className=" booking-images">
-                <img src="assets/images/online-booking_1.jpg" alt="Order online" width="100%" height="100%" />
-                <img src="assets/images/online-booking_2.jpg" alt="taxi Stop" width="100%" height="100%" />
+                <Fade left><img src="assets/images/online-booking_1.jpg" alt="Order online" width="100%" height="100%" /></Fade>
+                <Fade right><img src="assets/images/online-booking_2.jpg" alt="taxi Stop" width="100%" height="100%" /></Fade>
             </div>
             <div className="booknow">
-                <h1>BOOK TAXI NOW</h1>
+                <Zoom><h1>BOOK TAXI NOW</h1></Zoom>
             </div>
             <div className="center taxi-img">
+                <Zoom top>
                 <img src="assets/images/booking-taxi.png" alt="taxi-Booking" />
+                </Zoom>
             </div>
+            <Zoom>
             <div className="booking-form">
             <p className="messages-unfinished" id="messages-unfinished">Sorry we got some error please try again.</p>
           <p className="messages-finished" id="messages-finished">Account creation successfully. Thank You!</p>
                 <form action="" method="post">
                     <div className=" form-book">
+                        <Zoom>
                         <div >
                             <p>First Name</p>
                             <input type="text" name="name" 
@@ -120,6 +127,8 @@ const Booking = () => {
                             onChange={handleInputChange}
                             />
                         </div>
+                        </Zoom>
+                        <Zoom>
                         <div >
                             <p>Email Address</p>
                             <input type="email" 
@@ -130,6 +139,8 @@ const Booking = () => {
                             onChange={handleInputChange}
                             />
                         </div>
+                        </Zoom>
+                        <Zoom>
                         <div >
                             <p>Phone</p>
                             <input type="number"
@@ -141,6 +152,8 @@ const Booking = () => {
                             onChange={handleInputChange}
                             />
                         </div>
+                        </Zoom>
+                        <Zoom>
                         <div >
                             <p>Password</p>
                             <input type="password"
@@ -152,14 +165,18 @@ const Booking = () => {
                             onChange={handleInputChange}
                             />
                         </div>
+                        </Zoom>
                         
                     </div>
+                    <Zoom bottom>
                     <div className="center">
                     <div id="recaptcha"></div>
                         <button className="pt-10 btn-booknow" onClick={sendOTP}>BOOKNOW</button>
                     </div>
+                    </Zoom>
                 </form>
             </div>
+            </Zoom>
         </div>
     )
 }
