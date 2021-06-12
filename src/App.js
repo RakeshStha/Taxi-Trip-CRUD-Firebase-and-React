@@ -35,11 +35,7 @@ render(){
 
   return (
     <div className="App">
-      {this.state.user ? (<User/>) : (<Home/>)}
-      {/* <Home/> */}
-      {/* <User/> */}
-      
-          
+      {this.state.user ? (<User props={this.state.user}/>) : (<Home/>)}   
     </div>
   );
 }

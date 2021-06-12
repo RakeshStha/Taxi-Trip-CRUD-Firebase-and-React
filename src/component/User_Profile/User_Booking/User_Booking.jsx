@@ -63,11 +63,9 @@ const User_Booking = () => {
 
     return (
         <>
-    
             <div className="head-user-booking">
             <h1>Booking</h1>
-        </div>
-       
+            </div>
         <div class="user_booking">
             <div className="user_booking_content">
                 <div className="flex-1">
@@ -115,7 +113,6 @@ const User_Booking = () => {
                 </div>
             </div>
         </div>
-
         </>
     );
 }

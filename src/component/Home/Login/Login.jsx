@@ -9,7 +9,7 @@ const Login = () => {
 
     const initialFieldValues= {
         username: '',
-        password: ''
+        passwords: ''
       }
       var [values, setValues] = useState(initialFieldValues);
 
@@ -29,7 +29,7 @@ const Login = () => {
         e.preventDefault();
         var Email = values.username + '@gmail.com'
         console.log(Email)
-        firebase.auth().signInWithEmailAndPassword(Email, values.password).then((u)=>{
+        firebase.auth().signInWithEmailAndPassword(Email, values.passwords).then((u)=>{
             alert('Login Sccessfully!')
             console.log(u)
             window.location.href = '/';
@@ -59,8 +59,8 @@ const Login = () => {
                         <h3>Password:</h3>
                     </label>
                     <input type="password" className="fullname"
-                    name="password"
-                    value={values.password}
+                    name="passwords"
+                    value={values.passwords}
                     onChange={handleInputChange}
                     />
                     <div className="btn-login">

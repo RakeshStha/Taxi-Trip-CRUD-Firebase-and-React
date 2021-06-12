@@ -25,16 +25,44 @@ const Booking = () => {
 
       const sendOTP=(e)=>{
         e.preventDefault();
-        var Phone = values.phone + '@gmail.com'
+        // var Phone = values.phone + '@gmail.com'
 
-        firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
-            // console.log(u)
-            var succeed = document.querySelector('.messages-finished');
-            succeed.classList.toggle("message-success");
-        }).catch((err)=>{
-            console.log(err);
-            console.log('Error')
-        })
+
+        // firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
+        //     // console.log(u)
+        //     const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
+        //     firebase.database().ref('signup').push( 
+        //     values
+        //     ).catch((error)=>{
+        //         console.log(error)
+        //     //     var unsucceed = document.querySelector('messages-unfinished');
+        //     //   unsucceed.classList.toggle("message-unsuccess")
+        //       alert('Database Error')
+        //     })
+        //     window.location.href = '/';
+
+        //     // var succeed = document.querySelector('.messages-finished');
+        //     // succeed.classList.toggle("message-success");
+        // }).catch((err)=>{
+        //     console.log(err);
+        //     // var unsucceed = document.querySelector('messages-unfinished');
+        //     //   unsucceed.classList.toggle("message-unsuccess")
+        //       alert('Invalid password')
+          
+        // })
+        
+
+
+//         var Phone = values.phone + '@gmail.com'
+// console.log (Phone)
+//         firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
+//             // console.log(u)
+//             var succeed = document.querySelector('.messages-finished');
+//             succeed.classList.toggle("message-success");
+//         }).catch((err)=>{
+//             console.log(err);
+//             console.log('Error')
+//         })
 
         // const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
         //     firebase.database().ref('signup').push( 
@@ -45,52 +73,58 @@ const Booking = () => {
 
 
         
-        // let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
-        // // let number = '+9779849497787'
-        // // console.log(typeof(number));
-        // let number ='+977' + String(values.phone);
-        // // console.log(number);
-        // firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
-        // let code = prompt('enter the otp', '');
-        // // this.setState({
-        // //   popupComponent:true,
-        // // })
-        // if(code == null) return;
+        let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
+        // let number = '+9779849497787'
+        // console.log(typeof(number));
+        let number ='+977' + String(values.phone);
+        // console.log(number);
+        firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e) {
+        let code = prompt('enter the otp', '');
+        // this.setState({
+        //   popupComponent:true,
+        // })
+        if(code == null) return;
 
-        // e.confirm(code).then(function(result){
-        //     console.log(result.user, 'user');
-        //     // document.querySelector('label').textContent = result.user.phoneNumber + "Number verified";
+        e.confirm(code).then(function(result){
+            console.log(result.user, 'user');
+            // document.querySelector('label').textContent = result.user.phoneNumber + "Number verified";
+            const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
+            firebase.database().ref('signup').push( 
+            values
+            ).catch((error)=>{
+                console.log(error)
+            //     var unsucceed = document.querySelector('messages-unfinished');
+            //   unsucceed.classList.toggle("message-unsuccess")
+            alert('Database Error')
+            })
+            window.location.href = '/';
+
+        var Phone = values.phone + '@gmail.com'
+
+        firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
+            // console.log(u)
+
+            // var succeed = document.querySelector('.messages-finished');
+            // succeed.classList.toggle("message-success");
+        }).catch((err)=>{
+            console.log(err);
+            // var unsucceed = document.querySelector('messages-unfinished');
+            //   unsucceed.classList.toggle("message-unsuccess")
+              alert('Invalid password')
+              window.location.href = '/';
+        })
+
+
+            }).catch((error)=>{
             
-        //     const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(100);
-        //     firebase.database().ref('signup').push( 
-        //     values
-        //     ).catch((error)=>{
-        //         console.log(error)
-        //         var unsucceed = document.querySelector('messages-unfinished');
-        //       unsucceed.classList.toggle("message-unsuccess")
-        //     })
-        //     var Phone = values.phone + '@gmail.com'
-
-        // firebase.auth().createUserWithEmailAndPassword(Phone, values.password).then(()=>{
-        //     // console.log(u)
-        //     var succeed = document.querySelector('.messages-finished');
-        //     succeed.classList.toggle("message-success");
-        // }).catch((err)=>{
-        //     console.log(err);
-        //     var unsucceed = document.querySelector('messages-unfinished');
-        //       unsucceed.classList.toggle("message-unsuccess")
-        // })
-
-
-        //     }).catch((error)=>{
-            
-        //     // var unsucceed = document.querySelector('messages-unfinished');
-        //     //   unsucceed.classList.toggle("message-unsuccess")
-        //       console.log(error)
-        //       alert('Code doesnot match. Please try again. Thank You!')
-        //     // console.log('code does not match');
-        // })
-        // })
+            // var unsucceed = document.querySelector('messages-unfinished');
+            //   unsucceed.classList.toggle("message-unsuccess")
+              console.log(error)
+              alert('Code doesnot match. Please try again. Thank You!')
+              window.location.href = '/';
+            // console.log('code does not match');
+        })
+        })
       }
     
 
@@ -157,7 +191,7 @@ const Booking = () => {
                         <div >
                             <p>Password</p>
                             <input type="password"
-                            
+                            min="6"
                             name="password" 
                             id="password"
                             value={values.password} 
