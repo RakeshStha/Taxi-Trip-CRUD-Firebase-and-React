@@ -27,7 +27,9 @@ const Login = () => {
         // succeed.classList.toggle("message-success");
     
         e.preventDefault();
-        var Email = values.username + '@gmail.com'
+        // + '@gmail.com'
+
+        var Email = values.username 
         console.log(Email)
         firebase.auth().signInWithEmailAndPassword(Email, values.passwords).then((u)=>{
             alert('Login Sccessfully!')

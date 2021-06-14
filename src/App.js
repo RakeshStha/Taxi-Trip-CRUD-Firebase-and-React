@@ -23,6 +23,10 @@ class App extends Component {
     firebase.auth().onAuthStateChanged((user)=> {
       if (user){
         this.setState({user});
+        console.log(user.email)
+        console.log(user.uid)
+      
+    
       }
       else {
         this.setState({user: null});
@@ -35,7 +39,7 @@ render(){
 
   return (
     <div className="App">
-      {this.state.user ? (<User props={this.state.user}/>) : (<Home/>)}   
+      {this.state.user ? (<User/>) : (<Home/>)}   
     </div>
   );
 }
