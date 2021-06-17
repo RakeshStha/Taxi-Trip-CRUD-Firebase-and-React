@@ -23,10 +23,8 @@ class App extends Component {
     firebase.auth().onAuthStateChanged((user)=> {
       if (user){
         this.setState({user});
-        console.log(user.email)
-        console.log(user.uid)
-      
-    
+        // console.log(user.email)
+        // console.log(user.uid)
       }
       else {
         this.setState({user: null});

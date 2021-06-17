@@ -4,6 +4,8 @@ import firebaseDb from '../../Home/firebase'
 import '../User_Booking/user-booking.css'
 
 
+
+
 const User_Booking = () => {
 
         var [contactObjects, setContactObjects] = useState({})
@@ -20,6 +22,10 @@ const User_Booking = () => {
                     setContactObjects({})
             })
         },[])
+
+        
+            
+        
 
 
         //Insert
@@ -61,10 +67,12 @@ const User_Booking = () => {
             }
         }
 
+      
+
     return (
         <>
             <div className="head-user-booking">
-            <h1>Booking</h1>
+                <h1>Online Booking</h1>
             </div>
         <div class="user_booking">
             <div className="user_booking_content">
@@ -72,6 +80,7 @@ const User_Booking = () => {
                     <User_Booking_Form {...({addOrEdit,  currentId, contactObjects})}/>
                     </div>
                 <div className="flex-1">
+                    <h2 className="tableheading">Recent request records</h2>
                     <table className="records">
                         <tr>
                             <th>Full Name</th>

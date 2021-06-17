@@ -10,11 +10,12 @@
 }
 
 .user_container {
-    margin: 5px 100px 5px 100px;
+    margin: 20px 100px 20px 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid black;
 }
 
 .label {
