@@ -124,9 +124,9 @@ const BookingForm = (props) => {
                 <option value="None">----------</option>
                 <option value="Normal Taxi">Normal Taxi</option>
                 <option value="Share Taxi">Share taxi</option> 
-                <option value="One Seat">One seat</option>                
-                <option value="Two seat">Two seat</option>
-                <option value="Three seat">Three seat</option> 
+                <option value="Share 1 Seat"> Share 1 seat</option>                
+                <option value="Share 2 seat">Share 2 seat</option>
+                <option value="Share 3 seat">Share 3 seat</option> 
                 </select>
             </div>
             <div className="flex-1">
