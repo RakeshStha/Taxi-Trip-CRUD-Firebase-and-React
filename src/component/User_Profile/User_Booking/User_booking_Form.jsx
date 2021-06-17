@@ -123,8 +123,10 @@ const BookingForm = (props) => {
                 <select name="type" id="type" className="categories" value={values.type} onChange={handleInputChange} required>
                 <option value="None">----------</option>
                 <option value="Normal Taxi">Normal Taxi</option>
-                <option value="Share Taxi">Share taxi</option>                
-                
+                <option value="Share Taxi">Share taxi</option> 
+                <option value="One Seat">One seat</option>                
+                <option value="Two seat">Two seat</option>
+                <option value="Three seat">Three seat</option> 
                 </select>
             </div>
             <div className="flex-1">

@@ -46,12 +46,12 @@ class User_Map extends Component {
      </div>
      latitude: {this.state.latitude}<br></br>
         longitude: {this.state.longitude}
-      <Map 
+      {/* <Map 
       className="map-a"
       google={this.props.google}
       center={{
-        lat: 29.59714,
-        lng: 85.31942
+        lat: this.state.latitude,
+        lng: this.state.latitude
       }}
       zoom={15}
       onClick={this.onMapClicked}
@@ -59,8 +59,8 @@ class User_Map extends Component {
  
       <Marker 
       name={'Current Location'}
-      position={{lat: 27.59714, lng: 85.31942}} />  
-    </Map>
+      position={{lat: this.state.latitude, lng: this.state.latitude}} />  
+    </Map> */}
 
     {/* <Map 
       className="map-b"
