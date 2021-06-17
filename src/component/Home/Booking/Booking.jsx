@@ -164,6 +164,7 @@ const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(10
                             placeholder="Your Name" 
                             value={values.name}
                             onChange={handleInputChange}
+                            required
                             />
                         </div>
                         </Zoom>
@@ -176,6 +177,7 @@ const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(10
                             placeholder="abc@gmail.com" 
                             value={values.email}
                             onChange={handleInputChange}
+                            required
                             />
                         </div>
                         </Zoom>
@@ -189,6 +191,7 @@ const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(10
                             value={values.phone} 
                             placeholder="+977-9812345678" 
                             onChange={handleInputChange}
+                            required
                             />
                         </div>
                         </Zoom>
@@ -202,6 +205,7 @@ const messageRef = firebase.database().ref('signup').orderByKey().limitToLast(10
                             value={values.password} 
                             placeholder="******" 
                             onChange={handleInputChange}
+                            required
                             />
                         </div>
                         </Zoom>

@@ -56,6 +56,7 @@ const Login = () => {
                     name="username"
                     value={values.username}
                     onChange={handleInputChange}
+                    required
                     />
                     <label for="password">
                         <h3>Password:</h3>
@@ -64,6 +65,7 @@ const Login = () => {
                     name="passwords"
                     value={values.passwords}
                     onChange={handleInputChange}
+                    required
                     />
                     <div className="btn-login">
                         <button className="btn-btnlogin" onClick={handleFormLogin}>Login</button>

@@ -88,31 +88,44 @@ const BookingForm = (props) => {
             <div className="flex-1">
                 <label className="user_label">From:</label>
                 <br></br>
-                <input type="text" 
-                name="from"
-                value={values.from}
-                onChange={handleInputChange}
-                />
+                <select name="from" id="from" className="categories" value={values.from} onChange={handleInputChange} required>
+                <option value="None">----------</option>
+                <option value="Chapagaun">Chapagaun</option>
+                <option value="Lagankhel">Lagankhel</option>                
+                <option value="Satdobato">Satdobato</option>
+                <option value="Koteshwor">Koteshwor</option>
+                <option value="Tinkune">Tinkune</option>
+                <option value="Santinagar">Santinagar</option>
+                <option value="Baneshwor">Baneshwor</option>
+                </select>
             </div>
             <div className="flex-1">
                 <label className="user_label">To:</label>
                 <br></br>
-                <input type="text" 
-                name="to"
-                value={values.to}
-                onChange={handleInputChange}
-                />
+               
+                <select name="to" id="to" className="categories" value={values.to} onChange={handleInputChange} required>
+                <option value="None">----------</option>
+                <option value="Chapagaun">Chapagaun</option>
+                <option value="Lagankhel">Lagankhel</option>                
+                <option value="Satdobato">Satdobato</option>
+                <option value="Koteshwor">Koteshwor</option>
+                <option value="Tinkune">Tinkune</option>
+                <option value="Santinagar">Santinagar</option>
+                <option value="Baneshwor">Baneshwor</option>
+                </select>
             </div>  
         </div>
         <div className="user-input">
             <div className="flex-1">
                 <label className="user_label">Type:</label>
                 <br></br>
-                <input type="text" 
-                name="type"
-                value={values.type}
-                onChange={handleInputChange}
-                />
+              
+                <select name="type" id="type" className="categories" value={values.type} onChange={handleInputChange} required>
+                <option value="None">----------</option>
+                <option value="Normal Taxi">Normal Taxi</option>
+                <option value="Share Taxi">Share taxi</option>                
+                
+                </select>
             </div>
             <div className="flex-1">
                 <label className="user_label">Price:</label>

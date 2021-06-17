@@ -42,6 +42,15 @@
     height: 23px;
 }
 
+.categories{
+    margin: 10px;
+    height: 30px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgb(63, 56, 56);
+}
+
 
 /*table*/
 

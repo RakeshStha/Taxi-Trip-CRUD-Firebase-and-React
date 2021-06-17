@@ -85,6 +85,7 @@ const Contact = () => {
               name="fname"
               value={values.fname}
               onChange={handleInputChange}
+              required
               />
               </Zoom>
               <label for="email">
@@ -95,6 +96,7 @@ const Contact = () => {
               name="email"
               value={values.email}
               onChange={handleInputChange}
+              required
               />
               </Zoom>
               <label for="message">
@@ -105,6 +107,7 @@ const Contact = () => {
               name="message"
               value={values.message}
               onChange={handleInputChange}
+              required
               />
               </Zoom>
               <br />
