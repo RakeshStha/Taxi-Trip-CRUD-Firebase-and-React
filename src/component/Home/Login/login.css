@@ -10,6 +10,16 @@
     align-items: center;
 }
 
+.login_form input{
+    padding-left: 15px;
+}
+
+.login_form input::placeholder{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
 .login_content {
     margin-top: 70px;
     margin-bottom: 50px;
@@ -27,7 +37,7 @@
 }
 
 .login_form {
-    padding: 20px;
+    padding: 0px;
     padding-bottom: 0px;
 }
 
@@ -51,6 +61,15 @@
     width: 10rem;
 }
 
+.login-input{
+    width: 100%;
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.5rem;
+    
+}
+
 .btn-login-register{
     margin: 0px;
     padding: 0px;
@@ -61,6 +80,7 @@
 }
 
 .login-p{
-    font-size: 24px;
+    font-size: 18px;
+    text-decoration: none;
     font-weight: 700;
 }

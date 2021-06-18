@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '../Login/login.css'
 import {Link} from "react-router-dom";
 import firebase from "../firebase"
-import Profile from "../../User_Profile/Profile/Profile"
+
 
 
 const Login = () => {
@@ -47,13 +47,14 @@ const Login = () => {
 
             <div className="login_container">
                 <div className="login_content">
-                    <h1>Login</h1>
+                    <h1 >Login</h1>
                     <form className="login_form">
                     <label for="username">
                         <h3>Username:</h3>
                     </label>
-                    <input type="text" className="fullname"
+                    <input type="text" className="login-input"
                     name="username"
+                    placeholder="abc@gmail.com"
                     value={values.username}
                     onChange={handleInputChange}
                     required
@@ -61,8 +62,9 @@ const Login = () => {
                     <label for="password">
                         <h3>Password:</h3>
                     </label>
-                    <input type="password" className="fullname"
+                    <input type="password" className="login-input"
                     name="passwords"
+                    placeholder="**********"
                     value={values.passwords}
                     onChange={handleInputChange}
                     required
@@ -71,7 +73,7 @@ const Login = () => {
                         <button className="btn-btnlogin" onClick={handleFormLogin}>Login</button>
                     </div>
                     <div className="btn-login-register" >
-                        <Link to="/booking" className="login-p">Register here</Link>
+                        Don't have an account? &nbsp; <Link to="/booking" className="login-p">Register here</Link>
                     </div>
                     </form>
                 </div>
