@@ -21,8 +21,9 @@ class Profile extends Component {
       firebase.auth().onAuthStateChanged((user)=> {
         if (user){
           this.setState({user});
-          console.log(user.email)
-          console.log(user.uid)
+          // console.log(user.email)
+          // console.log(user.uid)
+
           document.getElementById('username').innerHTML= user.email;
           document.getElementById('profile').innerHTML= user.email;
           document.getElementById('uid').innerHTML = user.uid;

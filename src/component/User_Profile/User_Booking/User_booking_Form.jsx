@@ -78,6 +78,7 @@ const BookingForm = (props) => {
             <div className="notes-center">
                 <div className="notes">
                     <p><b>Note:</b> Please use your register gmail - <span className="warn" id="username"></span> </p>
+                    {/* <span className="warn" id="username"></span> */}
                 </div>
             </div>
             <div className="notes-center">
@@ -98,7 +99,7 @@ const BookingForm = (props) => {
                         <div className="justify-centers">
                             <label className="user_label">Email: </label>
                             <input type="text" 
-                            name="email" 
+                            name="email"
                             placeholder="abc@gmail.com"
                             value={values.email}
                             onChange={handleInputChange}
